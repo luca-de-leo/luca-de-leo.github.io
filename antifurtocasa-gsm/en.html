@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy – Antifurto Casa</title>
+<meta name="description" content="Privacy policy of the Android app Antifurto Casa (it.ldl.antifurtocasa).">
+<link rel="alternate" hreflang="it" href="index.html">
+<style>
+:root{--bg:#F6F8FB;--card:#FFFFFF;--text:#1A2433;--muted:#5A6B80;--accent:#14917B;--line:#E1E7EF}
+@media (prefers-color-scheme:dark){:root{--bg:#08121F;--card:#101D2F;--text:#E6EDF5;--muted:#9FB0C4;--accent:#2EC4A6;--line:#22344B}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px}
+h1{font-size:1.6rem;line-height:1.25;margin:0 0 4px}
+h2{font-size:1.1rem;margin:28px 0 8px;color:var(--accent)}
+p,li{margin:0 0 10px}
+ul{padding-left:20px;margin:0 0 10px}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.lang{float:right;font-size:.9rem}
+a{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:.95rem;margin:6px 0 12px}
+th,td{text-align:left;vertical-align:top;padding:8px;border-top:1px solid var(--line)}
+th{color:var(--muted);font-weight:600}
+.box{border-left:4px solid var(--accent);padding:8px 12px;background:rgba(46,196,166,.08);border-radius:6px}
+@media (max-width:520px){table,thead,tbody,tr,th,td{display:block}thead{display:none}td{border-top:none;padding:2px 0}tr{border-top:1px solid var(--line);padding:8px 0}td:first-child{font-weight:600}}
+</style>
+</head>
+<body>
+<main>
+<div class="card">
+<a class="lang" href="index.html" hreflang="it">Italiano</a>
+<h1>Privacy policy</h1>
+<div class="meta">Android app “Antifurto Casa” (<code>it.ldl.antifurtocasa</code>) · Last updated: 25 October 2026</div>
+
+<p class="box"><strong>In short:</strong> the app does not collect personal data and does not send it to anyone. The control panel number and code you enter stay only on your phone, encrypted. The app does not use the internet and has no accounts, ads, analytics or third-party services.</p>
+
+<h2>1. Data controller</h2>
+<p>Luca De Leo – email: <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a></p>
+
+<h2>2. What the app does</h2>
+<p>Antifurto Casa remotely controls a burglar alarm panel equipped with a GSM telephone dialer: it calls the number of the panel's SIM card and, during the call, sends the DTMF tones that arm or disarm the system.</p>
+
+<h2>3. Data processed and where it stays</h2>
+<table>
+<thead><tr><th>Data</th><th>Purpose</th><th>Where it is stored</th></tr></thead>
+<tbody>
+<tr><td>Phone number of the panel</td><td>Placing the command call</td><td>On the phone only, encrypted with Android Keystore. Excluded from backup.</td></tr>
+<tr><td>DTMF code of the panel</td><td>Sending the command during the call</td><td>On the phone only, encrypted with Android Keystore. Excluded from backup.</td></tr>
+<tr><td>Output, selected SIM, delays</td><td>Configuring the command sequence</td><td>On the phone only. May be included in Android backup (see section 6).</td></tr>
+</tbody>
+</table>
+<p>The controller <strong>does not receive and cannot access</strong> any of this data: the app has no server.</p>
+
+<h2>4. Permissions</h2>
+<ul>
+<li><strong>Make phone calls (CALL_PHONE):</strong> to call the panel and dial the command tones. The app does not read your call history or contacts.</li>
+<li><strong>Phone state (READ_PHONE_STATE):</strong> requested only if you choose to call with SIM 1 or SIM 2, to find out which SIM is in that slot. The SIM identifier is used on the spot and never stored. No phone numbers, IMEI or other identifiers are read.</li>
+<li><strong>Biometrics (USE_BIOMETRIC):</strong> to ask for your fingerprint before every command. Recognition is performed by Android: the app only receives the result (success / failure) and has no access to fingerprints.</li>
+</ul>
+<p>The app <strong>does not use</strong> location, camera, microphone, motion sensors, contacts, SMS, call log, files or photos, notifications, or advertising/device identifiers. It does not hold the internet permission.</p>
+
+<h2>5. Clipboard</h2>
+<p>When you start a command, the app copies the sequence to the clipboard in readable form <strong>with the code hidden</strong> (e.g. <code>**** → #3 → 1 → 7 → ###</code>). The code itself is never copied.</p>
+
+<h2>6. Android backup</h2>
+<p>If Google backup is enabled on your phone, Android may save the non-confidential settings (output, SIM, delays) in <em>your</em> Google account, to restore them after a reinstall. The number and code are excluded and must be entered again. Backup is managed by Google under your account's settings and terms; you can turn it off in Android settings.</p>
+
+<h2>7. Legal basis</h2>
+<p>Data entered in the app is processed exclusively on your device to provide the feature you requested (Art. 6(1)(b) GDPR). If you contact support, your email address and message are processed to reply to you (Art. 6(1)(b) and (f) GDPR) and kept for as long as needed to handle the request, and in any case no longer than 24 months.</p>
+
+<h2>8. Sharing and transfers</h2>
+<p>The app does not share data with third parties and does not transfer it outside the European Union. The call is placed from your phone through your mobile operator, like any other call. The app is downloaded through Google Play, which processes data under its own policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
+
+<h2>9. Retention and deletion</h2>
+<p>Data stays on the phone until you change or delete it. To delete everything: <em>Android Settings → Apps → Antifurto Casa → Storage → Clear data</em>, or uninstall the app. The controller holds no copies.</p>
+
+<h2>10. Security</h2>
+<p>The number and code are encrypted with Android's hardware-backed keys (Android Keystore). Every command requires biometric authentication. The code is masked on screen and never copied to the clipboard.</p>
+
+<h2>11. Children</h2>
+<p>The app is intended for adults who manage an alarm system and is not directed at anyone under 18.</p>
+
+<h2>12. Your rights</h2>
+<p>You have the right of access, rectification, erasure, restriction, portability and objection (Arts. 15–22 GDPR). Since the app's data is only on your device, you can exercise most of these rights directly in the app or in Android settings. For any request, write to <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>. You may also lodge a complaint with the Italian Data Protection Authority (<a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>) or the authority of your country.</p>
+
+<h2>13. Limitations</h2>
+<p>The app is an aid for sending commands to the panel: it is not an alarm system, does not replace a certified installation and does not guarantee protection. It starts the call but does not verify that the panel received or executed the command.</p>
+
+<h2>14. Changes</h2>
+<p>This policy may be updated, for example if the app's features change. The current version is always published at this address with its last-updated date.</p>
+</div>
+</main>
+</body>
+</html>

@@ -7,6 +7,8 @@ Ogni app ha una sua cartella, che corrisponde all'indirizzo da indicare nel Play
 | App | Indirizzo |
 |---|---|
 | Prezzi Carburanti | https://luca-de-leo.github.io/prezzicarburanti/ |
+| Antifurto Casa | https://luca-de-leo.github.io/antifurtocasa-gsm/ (EN: `en.html`) |
 
 Le cartelle e i loro nomi non vanno rinominati: gli indirizzi sono già comunicati agli store.
 La pagina di Prezzi Carburanti è generata dal repository dell'app (`docs/privacy-policy.md`, script `tools/make-privacy-page.py`) e non va modificata a mano.
+La pagina di Antifurto Casa è copiata da `docs/index.html` e `docs/en.html` del repository dell'app (`antifurtocasa-gsm`): modificarla lì e ricopiarla qui.

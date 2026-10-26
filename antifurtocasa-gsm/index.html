@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informativa privacy – Antifurto Casa</title>
+<meta name="description" content="Informativa sulla privacy dell'app Android Antifurto Casa (it.ldl.antifurtocasa).">
+<link rel="alternate" hreflang="en" href="en.html">
+<style>
+:root{--bg:#F6F8FB;--card:#FFFFFF;--text:#1A2433;--muted:#5A6B80;--accent:#14917B;--line:#E1E7EF}
+@media (prefers-color-scheme:dark){:root{--bg:#08121F;--card:#101D2F;--text:#E6EDF5;--muted:#9FB0C4;--accent:#2EC4A6;--line:#22344B}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px}
+h1{font-size:1.6rem;line-height:1.25;margin:0 0 4px}
+h2{font-size:1.1rem;margin:28px 0 8px;color:var(--accent)}
+p,li{margin:0 0 10px}
+ul{padding-left:20px;margin:0 0 10px}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.lang{float:right;font-size:.9rem}
+a{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:.95rem;margin:6px 0 12px}
+th,td{text-align:left;vertical-align:top;padding:8px;border-top:1px solid var(--line)}
+th{color:var(--muted);font-weight:600}
+.box{border-left:4px solid var(--accent);padding:8px 12px;background:rgba(46,196,166,.08);border-radius:6px}
+@media (max-width:520px){table,thead,tbody,tr,th,td{display:block}thead{display:none}td{border-top:none;padding:2px 0}tr{border-top:1px solid var(--line);padding:8px 0}td:first-child{font-weight:600}}
+</style>
+</head>
+<body>
+<main>
+<div class="card">
+<a class="lang" href="en.html" hreflang="en">English</a>
+<h1>Informativa sulla privacy</h1>
+<div class="meta">App Android “Antifurto Casa” (<code>it.ldl.antifurtocasa</code>) · Ultimo aggiornamento: 25 ottobre 2026</div>
+
+<p class="box"><strong>In breve:</strong> l'app non raccoglie dati personali e non li invia a nessuno. Il numero della centrale e il codice che inserisci restano solo sul tuo telefono, cifrati. L'app non usa internet, non ha account, pubblicità, statistiche o servizi di terze parti.</p>
+
+<h2>1. Titolare del trattamento</h2>
+<p>Luca De Leo – email: <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a></p>
+
+<h2>2. Cosa fa l'app</h2>
+<p>Antifurto Casa comanda a distanza una centrale antifurto dotata di combinatore telefonico GSM: chiama il numero della SIM della centrale e, durante la chiamata, invia i toni DTMF per inserire o disinserire l'impianto.</p>
+
+<h2>3. Dati trattati e dove restano</h2>
+<table>
+<thead><tr><th>Dato</th><th>Finalità</th><th>Dove si trova</th></tr></thead>
+<tbody>
+<tr><td>Numero di telefono della centrale</td><td>Effettuare la chiamata di comando</td><td>Solo sul telefono, cifrato con Android Keystore. Escluso dal backup.</td></tr>
+<tr><td>Codice DTMF della centrale</td><td>Inviare il comando durante la chiamata</td><td>Solo sul telefono, cifrato con Android Keystore. Escluso dal backup.</td></tr>
+<tr><td>Uscita, SIM scelta, tempi di attesa</td><td>Configurare la sequenza di comando</td><td>Solo sul telefono. Possono rientrare nel backup Android (vedi punto 6).</td></tr>
+</tbody>
+</table>
+<p>Il titolare <strong>non riceve e non può consultare</strong> nessuno di questi dati: non esiste un server dell'app.</p>
+
+<h2>4. Permessi usati</h2>
+<ul>
+<li><strong>Effettuare chiamate (CALL_PHONE):</strong> per chiamare la centrale e digitare i toni del comando. L'app non legge la cronologia delle chiamate né i contatti.</li>
+<li><strong>Stato del telefono (READ_PHONE_STATE):</strong> richiesto solo se scegli di chiamare con la SIM 1 o la SIM 2, per sapere quale SIM si trova in quello slot. L'identificativo della SIM viene usato al momento e non viene salvato. Non vengono letti numeri, IMEI o altri identificativi.</li>
+<li><strong>Biometria (USE_BIOMETRIC):</strong> per chiederti l'impronta prima di ogni comando. Il riconoscimento è svolto da Android: l'app riceve solo l'esito (riuscito / non riuscito) e non ha accesso alle impronte.</li>
+</ul>
+<p>L'app <strong>non usa</strong> posizione, fotocamera, microfono, sensori di movimento, contatti, SMS, registro chiamate, file o foto, notifiche, né identificativi pubblicitari o del dispositivo. Non dispone del permesso di accesso a internet.</p>
+
+<h2>5. Appunti</h2>
+<p>Quando avvii un comando, l'app copia negli appunti del telefono la sequenza in forma leggibile <strong>con il codice nascosto</strong> (es. <code>**** → #3 → 1 → 7 → ###</code>). Il codice non viene mai copiato.</p>
+
+<h2>6. Backup di Android</h2>
+<p>Se sul telefono è attivo il backup di Google, Android può salvare nel <em>tuo</em> account Google le impostazioni non riservate (uscita, SIM, tempi), per ripristinarle dopo una reinstallazione. Numero e codice sono esclusi e andranno reinseriti. Il backup è gestito da Google secondo le impostazioni e le condizioni del tuo account; puoi disattivarlo dalle impostazioni di Android.</p>
+
+<h2>7. Base giuridica</h2>
+<p>I dati inseriti nell'app sono trattati esclusivamente sul tuo dispositivo, per fornirti la funzione da te richiesta (art. 6, par. 1, lett. b GDPR). Se scrivi al supporto, il tuo indirizzo email e il contenuto del messaggio sono trattati per risponderti (art. 6, par. 1, lett. b e f GDPR) e conservati per il tempo necessario a gestire la richiesta, comunque non oltre 24 mesi.</p>
+
+<h2>8. Comunicazione a terzi e trasferimenti</h2>
+<p>L'app non comunica dati a terzi e non li trasferisce fuori dall'Unione europea. La chiamata viene effettuata dal tuo telefono tramite il tuo operatore telefonico, come qualsiasi altra chiamata. Il download dell'app avviene tramite Google Play, che tratta i dati secondo la propria informativa (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
+
+<h2>9. Conservazione e cancellazione</h2>
+<p>I dati restano sul telefono finché non li modifichi o elimini. Per cancellarli tutti: <em>Impostazioni Android → App → Antifurto Casa → Spazio di archiviazione → Cancella dati</em>, oppure disinstalla l'app. Non esistono copie presso il titolare.</p>
+
+<h2>10. Sicurezza</h2>
+<p>Numero e codice sono cifrati con le chiavi hardware di Android (Android Keystore). Ogni comando richiede l'autenticazione biometrica. Il codice è mascherato sullo schermo e non viene copiato negli appunti.</p>
+
+<h2>11. Minori</h2>
+<p>L'app è destinata a persone adulte che gestiscono un impianto antifurto e non è rivolta ai minori di 18 anni.</p>
+
+<h2>12. Diritti dell'interessato</h2>
+<p>Hai diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15–22 GDPR). Poiché i dati dell'app sono solo sul tuo dispositivo, puoi esercitare la maggior parte di questi diritti direttamente dall'app o dalle impostazioni di Android. Per qualsiasi richiesta scrivi a <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>. Puoi inoltre proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>).</p>
+
+<h2>13. Limiti dell'app</h2>
+<p>L'app è un ausilio per inviare comandi alla centrale: non è un sistema di allarme, non sostituisce un impianto certificato e non garantisce protezione. Avvia la chiamata ma non verifica che la centrale abbia ricevuto o eseguito il comando.</p>
+
+<h2>14. Modifiche</h2>
+<p>Questa informativa può essere aggiornata, ad esempio se cambiano le funzioni dell'app. La versione in vigore è sempre pubblicata a questo indirizzo, con la data di ultimo aggiornamento.</p>
+</div>
+</main>
+</body>
+</html>
