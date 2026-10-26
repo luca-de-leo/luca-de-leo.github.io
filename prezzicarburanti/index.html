@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informativa sulla privacy – Prezzi Carburanti</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1c1c1e; --muted: #5b5b60; --accent: #1f5fad; --line: #e1e1e4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141414; --fg: #ececec; --muted: #a8a8ad; --accent: #8fb8f0; --line: #333336; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2.2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--accent); }
+  p, li { margin: .6rem 0; }
+  ul { padding-left: 1.3rem; }
+  .updated { color: var(--muted); margin-top: 0; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<h1>Informativa sulla privacy</h1>
+<p class="updated">Ultimo aggiornamento: 22 ottobre 2026</p>
+<p>Questa informativa descrive come l'app <strong>Prezzi Carburanti</strong> (di seguito "l'app") tratta i dati degli utenti. L'app è sviluppata da Luca De Leo, contattabile all'indirizzo <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
+<h2>In sintesi</h2>
+<ul>
+<li>L'app non richiede registrazione e non raccoglie dati personali su server propri: non ha un server.</li>
+<li>La posizione è usata solo per cercare i distributori vicini e non viene memorizzata né condivisa per altri scopi.</li>
+<li>Non ci sono pubblicità, sistemi di analisi statistica o di tracciamento.</li>
+</ul>
+<h2>Posizione</h2>
+<p>L'app chiede il permesso di accedere alla posizione <strong>solo mentre è in uso</strong> (mai in background). La posizione serve a:</p>
+<ul>
+<li>cercare i distributori vicini: le coordinate del punto di ricerca vengono inviate al servizio del Ministero delle Imprese e del Made in Italy (carburanti.mise.gov.it), che restituisce i distributori nell'area;</li>
+<li>mostrare il nome della via o del comune: le coordinate vengono passate al servizio di geocodifica del sistema operativo (su Android, normalmente fornito da Google).</li>
+</ul>
+<p>Se il permesso non viene concesso l'app funziona comunque: si può cercare un comune o un indirizzo, oppure scegliere un punto sulla mappa. In questo caso il testo cercato viene passato al servizio di geocodifica del sistema operativo e le coordinate del luogo scelto al servizio del Ministero.</p>
+<h2>Dati inviati a terzi</h2>
+<p>L'app comunica solo con questi servizi, e solo per le finalità indicate:</p>
+<ul>
+<li><strong>Ministero delle Imprese e del Made in Italy</strong>: coordinate del punto di ricerca e raggio (ricerca dei distributori), identificativo del distributore (dettaglio), download degli open data sui prezzi.</li>
+<li><strong>OpenStreetMap Foundation</strong>: le porzioni di mappa (tile) dell'area visualizzata; come per qualsiasi sito web, il server riceve l'indirizzo IP del dispositivo.</li>
+<li><strong>Overpass API</strong> (overpass-api.de, servizio che interroga i dati di OpenStreetMap), solo se è attivo "Usa i dati di OpenStreetMap" nelle impostazioni avanzate: le coordinate dei distributori trovati, per conoscere il tipo di strada e di zona e stimare il tempo per raggiungerli. Non viene inviata la posizione dell'utente; il server riceve l'indirizzo IP del dispositivo.</li>
+<li><strong>Servizio di geocodifica del sistema operativo</strong>: coordinate o testo cercato, per ottenere nomi di luoghi e indirizzi.</li>
+<li><strong>App di navigazione</strong> (es. Google Maps), solo se si usa "Portami qui": riceve la posizione del distributore scelto.</li>
+<li><strong>App scelta per la condivisione</strong>, solo se si usa "Condividi": riceve il testo con i dati del distributore.</li>
+</ul>
+<p>Ciascun servizio tratta i dati secondo la propria informativa.</p>
+<h2>Dati salvati sul dispositivo</h2>
+<p>L'app salva solo sul dispositivo:</p>
+<ul>
+<li>le impostazioni scelte, compresa la categoria dell'auto;</li>
+<li>i distributori preferiti;</li>
+<li>una copia degli open data del Ministero (anagrafica e prezzi dei distributori) e degli ultimi prezzi ricevuti, per funzionare anche senza connessione;</li>
+<li>il tipo di strada e di zona dei distributori ricevuto da OpenStreetMap, per non richiederlo a ogni ricerca.</li>
+</ul>
+<p>Questi dati non contengono informazioni personali e non vengono inviati a nessuno. I dati scaricati si possono cancellare in qualsiasi momento con "Svuota cache" nelle impostazioni; tutto viene cancellato disinstallando l'app.</p>
+<h2>Permessi richiesti</h2>
+<ul>
+<li><strong>Posizione (approssimativa e precisa), solo durante l'uso</strong>: per la ricerca dei distributori vicini.</li>
+<li><strong>Accesso a Internet e stato della rete</strong>: per scaricare i prezzi e per scaricare gli open data solo con Wi-Fi, se impostato.</li>
+</ul>
+<h2>Minori</h2>
+<p>L'app non è rivolta specificamente ai minori e non raccoglie consapevolmente dati che li riguardano.</p>
+<h2>Modifiche</h2>
+<p>Eventuali modifiche a questa informativa saranno pubblicate in questa pagina, con la data di aggiornamento.</p>
+<h2>Contatti</h2>
+<p>Per domande su questa informativa: <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
+</main>
+</body>
+</html>
