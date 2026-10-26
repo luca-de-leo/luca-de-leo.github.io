@@ -6,7 +6,8 @@ Ogni app ha una sua cartella, che corrisponde all'indirizzo da indicare nel Play
 
 | App | Indirizzo |
 |---|---|
-| Prezzi Carburanti | https://luca-de-leo.github.io/prezzicarburanti/ |
+| Prezzi Carburanti (italiano) | https://luca-de-leo.github.io/prezzicarburanti/ |
+| Prezzi Carburanti (English) | https://luca-de-leo.github.io/prezzicarburanti/en/ |
 | Antifurto Casa | https://luca-de-leo.github.io/antifurtocasa-gsm/ (EN: `en.html`) |
 
 Le cartelle e i loro nomi non vanno rinominati: gli indirizzi sono già comunicati agli store.
