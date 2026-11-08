@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Informativa sulla privacy – Prezzi Carburanti</title>
+<title>Informativa sulla privacy – Zero Giri</title>
 <style>
   :root { --bg: #ffffff; --fg: #1c1c1e; --muted: #5b5b60; --accent: #1f5fad; --line: #e1e1e4; }
   @media (prefers-color-scheme: dark) {
@@ -25,13 +25,13 @@
 <main>
 <p class="lang"><a href="en/" hreflang="en">English version</a></p>
 <h1>Informativa sulla privacy</h1>
-<p class="updated">Ultimo aggiornamento: 22 ottobre 2026</p>
-<p>Questa informativa descrive come l'app <strong>Prezzi Carburanti</strong> (di seguito "l'app") tratta i dati degli utenti. L'app è sviluppata da Luca De Leo, contattabile all'indirizzo <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
+<p class="updated">Ultimo aggiornamento: 8 novembre 2026</p>
+<p>Questa informativa descrive come l'app <strong>Zero Giri</strong> (in precedenza "Prezzi Carburanti", di seguito "l'app") tratta i dati degli utenti. L'app è sviluppata da Luca De Leo, contattabile all'indirizzo <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
 <h2>In sintesi</h2>
 <ul>
 <li>L'app non richiede registrazione e non raccoglie dati personali su server propri: non ha un server.</li>
 <li>La posizione è usata solo per cercare i distributori vicini e non viene memorizzata né condivisa per altri scopi.</li>
-<li>Non ci sono pubblicità, sistemi di analisi statistica o di tracciamento.</li>
+<li>Non ci sono pubblicità, sistemi di analisi statistica, di segnalazione degli arresti anomali o di tracciamento.</li>
 </ul>
 <h2>Posizione</h2>
 <p>L'app chiede il permesso di accedere alla posizione <strong>solo mentre è in uso</strong> (mai in background). La posizione serve a:</p>
@@ -59,12 +59,24 @@
 <li>una copia degli open data del Ministero (anagrafica e prezzi dei distributori) e degli ultimi prezzi ricevuti, per funzionare anche senza connessione;</li>
 <li>il tipo di strada e di zona dei distributori ricevuto da OpenStreetMap, per non richiederlo a ogni ricerca.</li>
 </ul>
-<p>Questi dati non contengono informazioni personali e non vengono inviati a nessuno. I dati scaricati si possono cancellare in qualsiasi momento con "Svuota cache" nelle impostazioni; tutto viene cancellato disinstallando l'app.</p>
+<p>Questi dati non contengono informazioni personali e l'app non li invia a nessuno. Se sul telefono è attivo il backup di Android, il sistema operativo può includere impostazioni e preferiti nel backup dell'account Google dell'utente, come per le altre app. I dati scaricati si possono cancellare in qualsiasi momento con "Svuota cache" nelle impostazioni; tutto viene cancellato disinstallando l'app.</p>
 <h2>Permessi richiesti</h2>
 <ul>
 <li><strong>Posizione (approssimativa e precisa), solo durante l'uso</strong>: per la ricerca dei distributori vicini.</li>
 <li><strong>Accesso a Internet e stato della rete</strong>: per scaricare i prezzi e per scaricare gli open data solo con Wi-Fi, se impostato.</li>
 </ul>
+<h2>Librerie e SDK presenti nell'app</h2>
+<p>L'app non contiene SDK di pubblicità, analisi statistica, segnalazione degli arresti anomali (crash reporting) né Firebase o Google Play Services. Usa solo librerie che funzionano sul dispositivo:</p>
+<ul>
+<li><strong>.NET MAUI</strong> e librerie <strong>AndroidX / Material Components</strong> (Microsoft, Google): interfaccia dell'app;</li>
+<li><strong>CommunityToolkit.Maui</strong> e <strong>CommunityToolkit.Mvvm</strong> (.NET Foundation): componenti dell'interfaccia;</li>
+<li><strong>Mapsui</strong>, <strong>BruTile</strong>, <strong>NetTopologySuite</strong>, <strong>SkiaSharp</strong>: disegno della mappa e dei tile di OpenStreetMap;</li>
+<li><strong>sqlite-net</strong> e <strong>SQLite</strong>: archivio locale dei dati scaricati;</li>
+<li><strong>Glide</strong>: caricamento delle immagini.</li>
+</ul>
+<p>Nessuna di queste librerie invia dati a terzi per conto proprio; le comunicazioni dell'app sono solo quelle elencate in "Dati inviati a terzi".</p>
+<h2>Segnalazione parcheggi (in arrivo)</h2>
+<p>Questa funzione non è ancora disponibile. Quando verrà introdotta, questa sezione descriverà quali dati vengono raccolti, a chi vengono inviati e per quanto tempo vengono conservati, e l'informativa riporterà la nuova data di aggiornamento.</p>
 <h2>Minori</h2>
 <p>L'app non è rivolta specificamente ai minori e non raccoglie consapevolmente dati che li riguardano.</p>
 <h2>Modifiche</h2>
