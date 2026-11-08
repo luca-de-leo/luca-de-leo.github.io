@@ -29,21 +29,29 @@
 <p>Questa informativa descrive come l'app <strong>Zero Giri</strong> (in precedenza "Prezzi Carburanti", di seguito "l'app") tratta i dati degli utenti. L'app è sviluppata da Luca De Leo, contattabile all'indirizzo <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
 <h2>In sintesi</h2>
 <ul>
-<li>L'app non richiede registrazione e non raccoglie dati personali su server propri: non ha un server.</li>
-<li>La posizione è usata solo per cercare i distributori vicini e non viene memorizzata né condivisa per altri scopi.</li>
+<li>L'app non richiede registrazione né account: il server di Zero Giri la riconosce solo con un codice anonimo generato a caso.</li>
+<li>La posizione è approssimativa e serve solo a cercare i distributori vicini: viene inviata per la ricerca, non viene conservata né usata per altri scopi.</li>
 <li>Non ci sono pubblicità, sistemi di analisi statistica, di segnalazione degli arresti anomali o di tracciamento.</li>
 </ul>
 <h2>Posizione</h2>
-<p>L'app chiede il permesso di accedere alla posizione <strong>solo mentre è in uso</strong> (mai in background). La posizione serve a:</p>
+<p>L'app chiede il permesso di accedere alla posizione <strong>approssimativa</strong> e <strong>solo mentre è in uso</strong> (mai in background). La posizione serve a:</p>
 <ul>
-<li>cercare i distributori vicini: le coordinate del punto di ricerca vengono inviate al servizio del Ministero delle Imprese e del Made in Italy (carburanti.mise.gov.it), che restituisce i distributori nell'area;</li>
-<li>mostrare il nome della via o del comune: le coordinate vengono passate al servizio di geocodifica del sistema operativo (su Android, normalmente fornito da Google).</li>
+<li>cercare i distributori vicini: le coordinate del punto di ricerca vengono inviate al server di Zero Giri, che restituisce distributori e prezzi degli open data del Ministero, e al servizio del Ministero delle Imprese e del Made in Italy (carburanti.mise.gov.it), che restituisce i prezzi in tempo reale;</li>
+<li>mostrare il nome del comune: le coordinate vengono passate al servizio di geocodifica del sistema operativo (su Android, normalmente fornito da Google).</li>
 </ul>
-<p>Se il permesso non viene concesso l'app funziona comunque: si può cercare un comune o un indirizzo, oppure scegliere un punto sulla mappa. In questo caso il testo cercato viene passato al servizio di geocodifica del sistema operativo e le coordinate del luogo scelto al servizio del Ministero.</p>
-<h2>Dati inviati a terzi</h2>
-<p>L'app comunica solo con questi servizi, e solo per le finalità indicate:</p>
+<p>Se il permesso non viene concesso l'app funziona comunque: si può cercare un comune o un indirizzo, oppure scegliere un punto sulla mappa. In questo caso il testo cercato viene passato al servizio di geocodifica del sistema operativo e le coordinate del luogo scelto al server di Zero Giri e al servizio del Ministero.</p>
+<h2>Server di Zero Giri</h2>
+<p>Il server dello sviluppatore (zerogiri.lucadeleo.it) fornisce all'app gli open data del Ministero sui carburanti e la configurazione dell'app.</p>
 <ul>
-<li><strong>Ministero delle Imprese e del Made in Italy</strong>: coordinate del punto di ricerca e raggio (ricerca dei distributori), identificativo del distributore (dettaglio), download degli open data sui prezzi.</li>
+<li><strong>Codice anonimo del dispositivo</strong>: al primo avvio l'app ottiene dal server un identificativo casuale e un codice segreto, che conserva nell'archivio cifrato del telefono e usa per accedere al server. Non sono legati a nome, email, numero di telefono o altri identificativi del dispositivo. Il server conserva l'identificativo, un'impronta (hash) del codice segreto, la data di registrazione e quella dell'ultimo accesso.</li>
+<li><strong>Ricerche</strong>: per ogni ricerca il server riceve le coordinate del punto di ricerca, il raggio e il carburante, e risponde con i distributori della zona. Le ricerche non vengono salvate.</li>
+<li><strong>Indirizzo IP</strong>: come per qualsiasi sito web il server riceve l'indirizzo IP, usato solo in memoria per limitare il numero di richieste e non registrato. Il server è raggiungibile attraverso Cloudflare, che gestisce il traffico e la protezione dagli abusi secondo la propria informativa.</li>
+<li>I registri del server non contengono coordinate, indirizzi IP né codici dei dispositivi.</li>
+</ul>
+<h2>Dati inviati a terzi</h2>
+<p>Oltre al server di Zero Giri, l'app comunica solo con questi servizi, e solo per le finalità indicate:</p>
+<ul>
+<li><strong>Ministero delle Imprese e del Made in Italy</strong>: coordinate del punto di ricerca e raggio (prezzi in tempo reale), identificativo del distributore (dettaglio).</li>
 <li><strong>OpenStreetMap Foundation</strong>: le porzioni di mappa (tile) dell'area visualizzata; come per qualsiasi sito web, il server riceve l'indirizzo IP del dispositivo.</li>
 <li><strong>Overpass API</strong> (overpass-api.de, servizio che interroga i dati di OpenStreetMap), solo se è attivo "Usa i dati di OpenStreetMap" nelle impostazioni avanzate: le coordinate dei distributori trovati, per conoscere il tipo di strada e di zona e stimare il tempo per raggiungerli. Non viene inviata la posizione dell'utente; il server riceve l'indirizzo IP del dispositivo.</li>
 <li><strong>Servizio di geocodifica del sistema operativo</strong>: coordinate o testo cercato, per ottenere nomi di luoghi e indirizzi.</li>
@@ -56,25 +64,26 @@
 <ul>
 <li>le impostazioni scelte, compresa la categoria dell'auto;</li>
 <li>i distributori preferiti;</li>
-<li>una copia degli open data del Ministero (anagrafica e prezzi dei distributori) e degli ultimi prezzi ricevuti, per funzionare anche senza connessione;</li>
+<li>il codice anonimo del dispositivo, nell'archivio cifrato del telefono;</li>
+<li>una copia dei distributori e dei prezzi delle zone già cercate (open data del Ministero e ultimi prezzi in tempo reale), per funzionare anche quando i servizi non rispondono o manca la connessione;</li>
 <li>il tipo di strada e di zona dei distributori ricevuto da OpenStreetMap, per non richiederlo a ogni ricerca.</li>
 </ul>
 <p>Questi dati non contengono informazioni personali e l'app non li invia a nessuno. Se sul telefono è attivo il backup di Android, il sistema operativo può includere impostazioni e preferiti nel backup dell'account Google dell'utente, come per le altre app. I dati scaricati si possono cancellare in qualsiasi momento con "Svuota cache" nelle impostazioni; tutto viene cancellato disinstallando l'app.</p>
 <h2>Permessi richiesti</h2>
 <ul>
-<li><strong>Posizione (approssimativa e precisa), solo durante l'uso</strong>: per la ricerca dei distributori vicini.</li>
-<li><strong>Accesso a Internet e stato della rete</strong>: per scaricare i prezzi e per scaricare gli open data solo con Wi-Fi, se impostato.</li>
+<li><strong>Posizione approssimativa, solo durante l'uso</strong>: per la ricerca dei distributori vicini. L'app non chiede la posizione precisa: il sistema operativo le fornisce una posizione spostata di circa un paio di chilometri.</li>
+<li><strong>Accesso a Internet e stato della rete</strong>: per scaricare distributori e prezzi, e per non tentare richieste quando manca la connessione.</li>
 </ul>
 <h2>Librerie e SDK presenti nell'app</h2>
 <p>L'app non contiene SDK di pubblicità, analisi statistica, segnalazione degli arresti anomali (crash reporting) né Firebase o Google Play Services. Usa solo librerie che funzionano sul dispositivo:</p>
 <ul>
-<li><strong>.NET MAUI</strong> e librerie <strong>AndroidX / Material Components</strong> (Microsoft, Google): interfaccia dell'app;</li>
+<li><strong>.NET MAUI</strong> e librerie <strong>AndroidX / Material Components</strong> (Microsoft, Google): interfaccia dell'app e archivio cifrato;</li>
 <li><strong>CommunityToolkit.Maui</strong> e <strong>CommunityToolkit.Mvvm</strong> (.NET Foundation): componenti dell'interfaccia;</li>
 <li><strong>Mapsui</strong>, <strong>BruTile</strong>, <strong>NetTopologySuite</strong>, <strong>SkiaSharp</strong>: disegno della mappa e dei tile di OpenStreetMap;</li>
 <li><strong>sqlite-net</strong> e <strong>SQLite</strong>: archivio locale dei dati scaricati;</li>
 <li><strong>Glide</strong>: caricamento delle immagini.</li>
 </ul>
-<p>Nessuna di queste librerie invia dati a terzi per conto proprio; le comunicazioni dell'app sono solo quelle elencate in "Dati inviati a terzi".</p>
+<p>Nessuna di queste librerie invia dati a terzi per conto proprio; le comunicazioni dell'app sono solo quelle elencate sopra.</p>
 <h2>Segnalazione parcheggi (in arrivo)</h2>
 <p>Questa funzione non è ancora disponibile. Quando verrà introdotta, questa sezione descriverà quali dati vengono raccolti, a chi vengono inviati e per quanto tempo vengono conservati, e l'informativa riporterà la nuova data di aggiornamento.</p>
 <h2>Minori</h2>

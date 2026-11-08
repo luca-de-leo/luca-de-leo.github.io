@@ -29,21 +29,29 @@
 <p>This policy describes how the app <strong>Zero Giri</strong> (formerly "Prezzi Carburanti", "the app") handles users' data. The app is developed by Luca De Leo, who can be contacted at <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
 <h2>In short</h2>
 <ul>
-<li>The app requires no registration and does not collect personal data on its own servers: it has no server.</li>
-<li>Location is used only to search for nearby fuel stations and is neither stored nor shared for any other purpose.</li>
+<li>The app requires no registration or account: the Zero Giri server recognises it only by a randomly generated anonymous code.</li>
+<li>Location is approximate and used only to search for nearby fuel stations: it is sent for the search, and is neither stored nor used for any other purpose.</li>
 <li>There are no ads, analytics, crash reporting or tracking systems.</li>
 </ul>
 <h2>Location</h2>
-<p>The app asks for permission to access location <strong>only while in use</strong> (never in the background). Location is used to:</p>
+<p>The app asks for permission to access <strong>approximate</strong> location <strong>only while in use</strong> (never in the background). Location is used to:</p>
 <ul>
-<li>search for nearby stations: the coordinates of the search point are sent to the service of the Italian Ministry of Enterprises and Made in Italy (carburanti.mise.gov.it), which returns the stations in the area;</li>
-<li>show the street or town name: the coordinates are passed to the operating system's geocoding service (on Android, normally provided by Google).</li>
+<li>search for nearby stations: the coordinates of the search point are sent to the Zero Giri server, which returns stations and prices from the Ministry's open data, and to the service of the Italian Ministry of Enterprises and Made in Italy (carburanti.mise.gov.it), which returns real-time prices;</li>
+<li>show the town name: the coordinates are passed to the operating system's geocoding service (on Android, normally provided by Google).</li>
 </ul>
-<p>If permission is not granted the app still works: you can search for a town or an address, or pick a point on the map. In this case the searched text is passed to the operating system's geocoding service and the coordinates of the chosen place to the Ministry's service.</p>
-<h2>Data sent to third parties</h2>
-<p>The app communicates only with these services, and only for the stated purposes:</p>
+<p>If permission is not granted the app still works: you can search for a town or an address, or pick a point on the map. In this case the searched text is passed to the operating system's geocoding service and the coordinates of the chosen place to the Zero Giri server and to the Ministry's service.</p>
+<h2>Zero Giri server</h2>
+<p>The developer's server (zerogiri.lucadeleo.it) provides the app with the Ministry's fuel open data and with the app configuration.</p>
 <ul>
-<li><strong>Ministry of Enterprises and Made in Italy</strong>: coordinates of the search point and radius (station search), station identifier (details), download of the open price data.</li>
+<li><strong>Anonymous device code</strong>: on first launch the app obtains a random identifier and a secret code from the server, keeps them in the phone's encrypted storage and uses them to access the server. They are not linked to name, email, phone number or other device identifiers. The server keeps the identifier, a fingerprint (hash) of the secret code, the registration date and the date of last access.</li>
+<li><strong>Searches</strong>: for each search the server receives the coordinates of the search point, the radius and the fuel, and replies with the stations in the area. Searches are not stored.</li>
+<li><strong>IP address</strong>: as with any website the server receives the IP address, used only in memory to limit the number of requests and not recorded. The server is reached through Cloudflare, which handles traffic and abuse protection according to its own policy.</li>
+<li>The server logs contain no coordinates, IP addresses or device codes.</li>
+</ul>
+<h2>Data sent to third parties</h2>
+<p>Besides the Zero Giri server, the app communicates only with these services, and only for the stated purposes:</p>
+<ul>
+<li><strong>Ministry of Enterprises and Made in Italy</strong>: coordinates of the search point and radius (real-time prices), station identifier (details).</li>
 <li><strong>OpenStreetMap Foundation</strong>: the map tiles of the displayed area; as with any website, the server receives the device's IP address.</li>
 <li><strong>Overpass API</strong> (overpass-api.de, a service that queries OpenStreetMap data), only if "Usa i dati di OpenStreetMap" (Use OpenStreetMap data) is on in the advanced settings: the coordinates of the stations found, to learn the type of road and area and estimate the travel time. The user's location is not sent; the server receives the device's IP address.</li>
 <li><strong>Operating system geocoding service</strong>: coordinates or searched text, to obtain place names and addresses.</li>
@@ -56,25 +64,26 @@
 <ul>
 <li>the chosen settings, including the car category;</li>
 <li>the favourite stations;</li>
-<li>a copy of the Ministry's open data (station registry and prices) and of the latest prices received, to work without a connection;</li>
+<li>the anonymous device code, in the phone's encrypted storage;</li>
+<li>a copy of the stations and prices of the areas already searched (Ministry open data and latest real-time prices), to keep working when the services do not respond or there is no connection;</li>
 <li>the type of road and area of the stations received from OpenStreetMap, to avoid requesting it on every search.</li>
 </ul>
 <p>This data contains no personal information and the app does not send it to anyone. If Android backup is enabled on the phone, the operating system may include settings and favourites in the user's Google account backup, as for other apps. Downloaded data can be deleted at any time with "Svuota cache" (Clear cache) in the settings; everything is deleted by uninstalling the app.</p>
 <h2>Permissions required</h2>
 <ul>
-<li><strong>Location (approximate and precise), only while in use</strong>: to search for nearby stations.</li>
-<li><strong>Internet access and network state</strong>: to download prices and, if set, to download the open data only over Wi-Fi.</li>
+<li><strong>Approximate location, only while in use</strong>: to search for nearby stations. The app does not ask for precise location: the operating system provides a location shifted by a couple of kilometres.</li>
+<li><strong>Internet access and network state</strong>: to download stations and prices, and to avoid requests when there is no connection.</li>
 </ul>
 <h2>Libraries and SDKs in the app</h2>
 <p>The app contains no advertising, analytics or crash reporting SDKs, nor Firebase or Google Play Services. It only uses libraries that run on the device:</p>
 <ul>
-<li><strong>.NET MAUI</strong> and <strong>AndroidX / Material Components</strong> libraries (Microsoft, Google): the app's user interface;</li>
+<li><strong>.NET MAUI</strong> and <strong>AndroidX / Material Components</strong> libraries (Microsoft, Google): the app's user interface and encrypted storage;</li>
 <li><strong>CommunityToolkit.Maui</strong> and <strong>CommunityToolkit.Mvvm</strong> (.NET Foundation): user interface components;</li>
 <li><strong>Mapsui</strong>, <strong>BruTile</strong>, <strong>NetTopologySuite</strong>, <strong>SkiaSharp</strong>: drawing the map and the OpenStreetMap tiles;</li>
 <li><strong>sqlite-net</strong> and <strong>SQLite</strong>: local storage of downloaded data;</li>
 <li><strong>Glide</strong>: image loading.</li>
 </ul>
-<p>None of these libraries sends data to third parties on its own; the app's communications are only those listed in "Data sent to third parties".</p>
+<p>None of these libraries sends data to third parties on its own; the app's communications are only those listed above.</p>
 <h2>Parking spot reports (coming soon)</h2>
 <p>This feature is not available yet. When it is introduced, this section will describe what data is collected, who it is sent to and how long it is kept, and the policy will show the new update date.</p>
 <h2>Children</h2>
