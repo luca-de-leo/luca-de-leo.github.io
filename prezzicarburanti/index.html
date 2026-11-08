@@ -30,14 +30,14 @@
 <h2>In sintesi</h2>
 <ul>
 <li>L'app non richiede registrazione né account: il server di Zero Giri la riconosce solo con un codice anonimo generato a caso.</li>
-<li>La posizione è approssimativa e serve solo a cercare i distributori vicini: viene inviata per la ricerca, non viene conservata né usata per altri scopi.</li>
+<li>La posizione serve solo a cercare i distributori vicini: viene inviata per la ricerca, non viene conservata né usata per altri scopi. Si può concedere anche solo quella approssimativa.</li>
 <li>Non ci sono pubblicità, sistemi di analisi statistica, di segnalazione degli arresti anomali o di tracciamento.</li>
 </ul>
 <h2>Posizione</h2>
-<p>L'app chiede il permesso di accedere alla posizione <strong>approssimativa</strong> e <strong>solo mentre è in uso</strong> (mai in background). La posizione serve a:</p>
+<p>L'app chiede il permesso di accedere alla posizione <strong>precisa</strong> e <strong>solo mentre è in uso</strong> (mai in background). L'utente può concedere anche solo quella <strong>approssimativa</strong>, che il sistema operativo sposta di circa un paio di chilometri: l'app funziona lo stesso. La posizione serve a:</p>
 <ul>
 <li>cercare i distributori vicini: le coordinate del punto di ricerca vengono inviate al server di Zero Giri, che restituisce distributori e prezzi degli open data del Ministero, e al servizio del Ministero delle Imprese e del Made in Italy (carburanti.mise.gov.it), che restituisce i prezzi in tempo reale;</li>
-<li>mostrare il nome del comune: le coordinate vengono passate al servizio di geocodifica del sistema operativo (su Android, normalmente fornito da Google).</li>
+<li>mostrare il nome della via e del comune (solo il comune con la posizione approssimativa): le coordinate vengono passate al servizio di geocodifica del sistema operativo (su Android, normalmente fornito da Google).</li>
 </ul>
 <p>Se il permesso non viene concesso l'app funziona comunque: si può cercare un comune o un indirizzo, oppure scegliere un punto sulla mappa. In questo caso il testo cercato viene passato al servizio di geocodifica del sistema operativo e le coordinate del luogo scelto al server di Zero Giri e al servizio del Ministero.</p>
 <h2>Server di Zero Giri</h2>
@@ -71,7 +71,7 @@
 <p>Questi dati non contengono informazioni personali e l'app non li invia a nessuno. Se sul telefono è attivo il backup di Android, il sistema operativo può includere impostazioni e preferiti nel backup dell'account Google dell'utente, come per le altre app. I dati scaricati si possono cancellare in qualsiasi momento con "Svuota cache" nelle impostazioni; tutto viene cancellato disinstallando l'app.</p>
 <h2>Permessi richiesti</h2>
 <ul>
-<li><strong>Posizione approssimativa, solo durante l'uso</strong>: per la ricerca dei distributori vicini. L'app non chiede la posizione precisa: il sistema operativo le fornisce una posizione spostata di circa un paio di chilometri.</li>
+<li><strong>Posizione precisa e approssimativa, solo durante l'uso</strong>: per la ricerca dei distributori vicini. Si può concedere solo quella approssimativa: il sistema operativo fornisce allora una posizione spostata di circa un paio di chilometri.</li>
 <li><strong>Accesso a Internet e stato della rete</strong>: per scaricare distributori e prezzi, e per non tentare richieste quando manca la connessione.</li>
 </ul>
 <h2>Librerie e SDK presenti nell'app</h2>

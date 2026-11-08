@@ -30,14 +30,14 @@
 <h2>In short</h2>
 <ul>
 <li>The app requires no registration or account: the Zero Giri server recognises it only by a randomly generated anonymous code.</li>
-<li>Location is approximate and used only to search for nearby fuel stations: it is sent for the search, and is neither stored nor used for any other purpose.</li>
+<li>Location is used only to search for nearby fuel stations: it is sent for the search, and is neither stored nor used for any other purpose. You can also grant approximate location only.</li>
 <li>There are no ads, analytics, crash reporting or tracking systems.</li>
 </ul>
 <h2>Location</h2>
-<p>The app asks for permission to access <strong>approximate</strong> location <strong>only while in use</strong> (never in the background). Location is used to:</p>
+<p>The app asks for permission to access <strong>precise</strong> location <strong>only while in use</strong> (never in the background). You can also grant <strong>approximate</strong> location only, which the operating system shifts by a couple of kilometres: the app still works. Location is used to:</p>
 <ul>
 <li>search for nearby stations: the coordinates of the search point are sent to the Zero Giri server, which returns stations and prices from the Ministry's open data, and to the service of the Italian Ministry of Enterprises and Made in Italy (carburanti.mise.gov.it), which returns real-time prices;</li>
-<li>show the town name: the coordinates are passed to the operating system's geocoding service (on Android, normally provided by Google).</li>
+<li>show the street and town name (only the town with approximate location): the coordinates are passed to the operating system's geocoding service (on Android, normally provided by Google).</li>
 </ul>
 <p>If permission is not granted the app still works: you can search for a town or an address, or pick a point on the map. In this case the searched text is passed to the operating system's geocoding service and the coordinates of the chosen place to the Zero Giri server and to the Ministry's service.</p>
 <h2>Zero Giri server</h2>
@@ -71,7 +71,7 @@
 <p>This data contains no personal information and the app does not send it to anyone. If Android backup is enabled on the phone, the operating system may include settings and favourites in the user's Google account backup, as for other apps. Downloaded data can be deleted at any time with "Svuota cache" (Clear cache) in the settings; everything is deleted by uninstalling the app.</p>
 <h2>Permissions required</h2>
 <ul>
-<li><strong>Approximate location, only while in use</strong>: to search for nearby stations. The app does not ask for precise location: the operating system provides a location shifted by a couple of kilometres.</li>
+<li><strong>Precise and approximate location, only while in use</strong>: to search for nearby stations. You can grant approximate location only: the operating system then provides a location shifted by a couple of kilometres.</li>
 <li><strong>Internet access and network state</strong>: to download stations and prices, and to avoid requests when there is no connection.</li>
 </ul>
 <h2>Libraries and SDKs in the app</h2>
