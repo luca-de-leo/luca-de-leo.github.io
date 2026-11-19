@@ -25,26 +25,29 @@
 <main>
 <p class="lang"><a href="en/" hreflang="en">English version</a></p>
 <h1>Informativa sulla privacy</h1>
-<p class="updated">Ultimo aggiornamento: 8 novembre 2026</p>
+<p class="updated">Ultimo aggiornamento: 9 novembre 2026</p>
 <p>Questa informativa descrive come l'app <strong>Zero Giri</strong> (in precedenza "Prezzi Carburanti", di seguito "l'app") tratta i dati degli utenti. L'app è sviluppata da Luca De Leo, contattabile all'indirizzo <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
 <h2>In sintesi</h2>
 <ul>
 <li>L'app non richiede registrazione né account: il server di Zero Giri la riconosce solo con un codice anonimo generato a caso.</li>
-<li>La posizione serve solo a cercare i distributori vicini: viene inviata per la ricerca, non viene conservata né usata per altri scopi. Si può concedere anche solo quella approssimativa.</li>
+<li>La posizione serve a cercare i distributori vicini: viene inviata per la ricerca, non viene conservata né usata per altri scopi. Si può concedere anche solo quella approssimativa.</li>
+<li>Solo se si usa la segnalazione dei parcheggi, il punto del posto lasciato libero viene conservato sul server per un massimo di 30 giorni, collegato al solo codice anonimo; gli altri utenti lo vedono sulla mappa per pochi minuti, senza sapere chi l'ha segnalato.</li>
 <li>Non ci sono pubblicità, sistemi di analisi statistica, di segnalazione degli arresti anomali o di tracciamento.</li>
 </ul>
 <h2>Posizione</h2>
-<p>L'app chiede il permesso di accedere alla posizione <strong>precisa</strong> e <strong>solo mentre è in uso</strong> (mai in background). L'utente può concedere anche solo quella <strong>approssimativa</strong>, che il sistema operativo sposta di circa un paio di chilometri: l'app funziona lo stesso. La posizione serve a:</p>
+<p>L'app chiede il permesso di accedere alla posizione <strong>precisa</strong> e <strong>solo mentre è in uso</strong> (mai in background). L'utente può concedere anche solo quella <strong>approssimativa</strong>, che il sistema operativo sposta di circa un paio di chilometri: la ricerca dei distributori funziona lo stesso, la segnalazione dei parcheggi no (vedi sotto). La posizione serve a:</p>
 <ul>
 <li>cercare i distributori vicini: le coordinate del punto di ricerca vengono inviate al server di Zero Giri, che restituisce distributori e prezzi degli open data del Ministero, e al servizio del Ministero delle Imprese e del Made in Italy (carburanti.mise.gov.it), che restituisce i prezzi in tempo reale;</li>
-<li>mostrare il nome della via e del comune (solo il comune con la posizione approssimativa): le coordinate vengono passate al servizio di geocodifica del sistema operativo (su Android, normalmente fornito da Google).</li>
+<li>mostrare il nome della via e del comune (solo il comune con la posizione approssimativa): le coordinate vengono passate al servizio di geocodifica del sistema operativo (su Android, normalmente fornito da Google);</li>
+<li>segnalare un posto auto lasciato libero e vedere quelli segnalati dagli altri, come descritto in "Segnalazione parcheggi".</li>
 </ul>
 <p>Se il permesso non viene concesso l'app funziona comunque: si può cercare un comune o un indirizzo, oppure scegliere un punto sulla mappa. In questo caso il testo cercato viene passato al servizio di geocodifica del sistema operativo e le coordinate del luogo scelto al server di Zero Giri e al servizio del Ministero.</p>
 <h2>Server di Zero Giri</h2>
-<p>Il server dello sviluppatore (zerogiri.lucadeleo.it) fornisce all'app gli open data del Ministero sui carburanti e la configurazione dell'app.</p>
+<p>Il server dello sviluppatore (zerogiri.lucadeleo.it) fornisce all'app gli open data del Ministero sui carburanti, la configurazione dell'app e, se attiva, la segnalazione dei parcheggi.</p>
 <ul>
 <li><strong>Codice anonimo del dispositivo</strong>: al primo avvio l'app ottiene dal server un identificativo casuale e un codice segreto, che conserva nell'archivio cifrato del telefono e usa per accedere al server. Non sono legati a nome, email, numero di telefono o altri identificativi del dispositivo. Il server conserva l'identificativo, un'impronta (hash) del codice segreto, la data di registrazione e quella dell'ultimo accesso.</li>
 <li><strong>Ricerche</strong>: per ogni ricerca il server riceve le coordinate del punto di ricerca, il raggio e il carburante, e risponde con i distributori della zona. Le ricerche non vengono salvate.</li>
+<li><strong>Parcheggi</strong>: le segnalazioni e le risposte descritte in "Segnalazione parcheggi", con i relativi contatori.</li>
 <li><strong>Indirizzo IP</strong>: come per qualsiasi sito web il server riceve l'indirizzo IP, usato solo in memoria per limitare il numero di richieste e non registrato. Il server è raggiungibile attraverso Cloudflare, che gestisce il traffico e la protezione dagli abusi secondo la propria informativa.</li>
 <li>I registri del server non contengono coordinate, indirizzi IP né codici dei dispositivi.</li>
 </ul>
@@ -55,7 +58,7 @@
 <li><strong>OpenStreetMap Foundation</strong>: le porzioni di mappa (tile) dell'area visualizzata; come per qualsiasi sito web, il server riceve l'indirizzo IP del dispositivo.</li>
 <li><strong>Overpass API</strong> (overpass-api.de, servizio che interroga i dati di OpenStreetMap), solo se è attivo "Usa i dati di OpenStreetMap" nelle impostazioni avanzate: le coordinate dei distributori trovati, per conoscere il tipo di strada e di zona e stimare il tempo per raggiungerli. Non viene inviata la posizione dell'utente; il server riceve l'indirizzo IP del dispositivo.</li>
 <li><strong>Servizio di geocodifica del sistema operativo</strong>: coordinate o testo cercato, per ottenere nomi di luoghi e indirizzi.</li>
-<li><strong>App di navigazione</strong> (es. Google Maps), solo se si usa "Portami qui": riceve la posizione del distributore scelto.</li>
+<li><strong>App di navigazione</strong> (es. Google Maps o Waze), solo se si usa "Portami qui" o "Portami lì": riceve la posizione del distributore o del posto auto scelto.</li>
 <li><strong>App scelta per la condivisione</strong>, solo se si usa "Condividi": riceve il testo con i dati del distributore.</li>
 </ul>
 <p>Ciascun servizio tratta i dati secondo la propria informativa.</p>
@@ -66,12 +69,13 @@
 <li>i distributori preferiti;</li>
 <li>il codice anonimo del dispositivo, nell'archivio cifrato del telefono;</li>
 <li>una copia dei distributori e dei prezzi delle zone già cercate (open data del Ministero e ultimi prezzi in tempo reale), per funzionare anche quando i servizi non rispondono o manca la connessione;</li>
-<li>il tipo di strada e di zona dei distributori ricevuto da OpenStreetMap, per non richiederlo a ogni ricerca.</li>
+<li>il tipo di strada e di zona dei distributori ricevuto da OpenStreetMap, per non richiederlo a ogni ricerca;</li>
+<li>la scelta di mostrare o no i posti liberi sulla mappa.</li>
 </ul>
 <p>Questi dati non contengono informazioni personali e l'app non li invia a nessuno. Se sul telefono è attivo il backup di Android, il sistema operativo può includere impostazioni e preferiti nel backup dell'account Google dell'utente, come per le altre app. I dati scaricati si possono cancellare in qualsiasi momento con "Svuota cache" nelle impostazioni; tutto viene cancellato disinstallando l'app.</p>
 <h2>Permessi richiesti</h2>
 <ul>
-<li><strong>Posizione precisa e approssimativa, solo durante l'uso</strong>: per la ricerca dei distributori vicini. Si può concedere solo quella approssimativa: il sistema operativo fornisce allora una posizione spostata di circa un paio di chilometri.</li>
+<li><strong>Posizione precisa e approssimativa, solo durante l'uso</strong>: per la ricerca dei distributori vicini e per la segnalazione dei parcheggi. Si può concedere solo quella approssimativa: il sistema operativo fornisce allora una posizione spostata di circa un paio di chilometri, che basta per i distributori ma non per indicare un posto auto.</li>
 <li><strong>Accesso a Internet e stato della rete</strong>: per scaricare distributori e prezzi, e per non tentare richieste quando manca la connessione.</li>
 </ul>
 <h2>Librerie e SDK presenti nell'app</h2>
@@ -84,8 +88,19 @@
 <li><strong>Glide</strong>: caricamento delle immagini.</li>
 </ul>
 <p>Nessuna di queste librerie invia dati a terzi per conto proprio; le comunicazioni dell'app sono solo quelle elencate sopra.</p>
-<h2>Segnalazione parcheggi (in arrivo)</h2>
-<p>Questa funzione non è ancora disponibile. Quando verrà introdotta, questa sezione descriverà quali dati vengono raccolti, a chi vengono inviati e per quanto tempo vengono conservati, e l'informativa riporterà la nuova data di aggiornamento.</p>
+<h2>Segnalazione parcheggi</h2>
+<p>Con la segnalazione dei parcheggi chi lascia un posto auto lo indica agli altri utenti, che lo vedono sulla mappa per pochi minuti. È facoltativa: si usa solo toccando "Ho lasciato il posto" o rispondendo su un posto, e richiede la posizione <strong>precisa</strong>, che l'app chiede solo in quel momento, dopo una schermata che spiega perché serve. Nessuna segnalazione parte in automatico, e niente avviene in background.</p>
+<p><strong>Quali dati.</strong> Il server riceve e conserva:</p>
+<ul>
+<li>quando si tocca "Ho lasciato il posto": le coordinate del posto (la posizione del telefono in quel momento), la sua incertezza in metri, la data e l'ora, il codice anonimo del dispositivo;</li>
+<li>quando si risponde "Ci ho parcheggiato" o "Era occupato": la risposta, la data e l'ora, il codice anonimo del dispositivo. La posizione di chi risponde viene inviata solo per verificare che sia vicino al posto e <strong>non viene salvata</strong>;</li>
+<li>per ogni codice anonimo, tre contatori: posti segnalati, posti confermati da altri con "Ci ho parcheggiato", posti segnalati come occupati.</li>
+</ul>
+<p>Mentre la mappa dei posti liberi è aperta, l'app invia al server il centro della zona visualizzata (o, finché la mappa non è pronta, la posizione del telefono) per ricevere i posti vicini; queste richieste non vengono salvate. La distanza dal posto si calcola sul telefono.</p>
+<p>Non vengono raccolti targa, modello dell'auto, nome o altri dati personali, né lo storico degli spostamenti: il server riceve un punto solo quando l'utente segnala o risponde.</p>
+<p><strong>Perché.</strong> Per mostrare agli altri utenti i posti liberi vicini; per stimare la probabilità che un posto sia ancora libero, in base a quanto tempo è passato e a quante segnalazioni dello stesso codice anonimo si sono rivelate giuste; per limitare abusi e segnalazioni ripetute; per mostrare a chi segnala quante persone ha aiutato, con una stima dei chilometri e della CO2 evitati.</p>
+<p><strong>Chi li vede.</strong> Gli altri utenti vedono sulla mappa solo la posizione del posto e da quanto tempo è stato segnalato, non chi l'ha segnalato. Chi ha segnalato un posto lo vede contrassegnato come proprio.</p>
+<p><strong>Per quanto tempo.</strong> Un posto resta visibile sulla mappa per pochi minuti (5 con le impostazioni attuali), o finché qualcuno risponde. Le segnalazioni e le risposte vengono cancellate dopo <strong>30 giorni</strong>; restano solo conteggi anonimi per zona (celle di circa 1,2 × 0,6 km) e per ora (giorno e ora), che non permettono di risalire al dispositivo né al punto esatto. I contatori restano collegati al codice anonimo. Disinstallando l'app il codice viene cancellato dal telefono: i dati rimasti sul server non sono più collegabili a nessuno, e le segnalazioni vengono comunque cancellate dopo 30 giorni. Per qualsiasi richiesta si può scrivere a <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
 <h2>Minori</h2>
 <p>L'app non è rivolta specificamente ai minori e non raccoglie consapevolmente dati che li riguardano.</p>
 <h2>Modifiche</h2>

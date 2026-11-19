@@ -25,26 +25,29 @@
 <main>
 <p class="lang"><a href="../" hreflang="it">Versione italiana</a></p>
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 8 November 2026</p>
+<p class="updated">Last updated: 9 November 2026</p>
 <p>This policy describes how the app <strong>Zero Giri</strong> (formerly "Prezzi Carburanti", "the app") handles users' data. The app is developed by Luca De Leo, who can be contacted at <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
 <h2>In short</h2>
 <ul>
 <li>The app requires no registration or account: the Zero Giri server recognises it only by a randomly generated anonymous code.</li>
-<li>Location is used only to search for nearby fuel stations: it is sent for the search, and is neither stored nor used for any other purpose. You can also grant approximate location only.</li>
+<li>Location is used to search for nearby fuel stations: it is sent for the search, and is neither stored nor used for any other purpose. You can also grant approximate location only.</li>
+<li>Only if you use parking spot reports, the point of the spot you left is kept on the server for at most 30 days, linked only to the anonymous code; other users see it on the map for a few minutes, without knowing who reported it.</li>
 <li>There are no ads, analytics, crash reporting or tracking systems.</li>
 </ul>
 <h2>Location</h2>
-<p>The app asks for permission to access <strong>precise</strong> location <strong>only while in use</strong> (never in the background). You can also grant <strong>approximate</strong> location only, which the operating system shifts by a couple of kilometres: the app still works. Location is used to:</p>
+<p>The app asks for permission to access <strong>precise</strong> location <strong>only while in use</strong> (never in the background). You can also grant <strong>approximate</strong> location only, which the operating system shifts by a couple of kilometres: the station search still works, parking spot reports do not (see below). Location is used to:</p>
 <ul>
 <li>search for nearby stations: the coordinates of the search point are sent to the Zero Giri server, which returns stations and prices from the Ministry's open data, and to the service of the Italian Ministry of Enterprises and Made in Italy (carburanti.mise.gov.it), which returns real-time prices;</li>
-<li>show the street and town name (only the town with approximate location): the coordinates are passed to the operating system's geocoding service (on Android, normally provided by Google).</li>
+<li>show the street and town name (only the town with approximate location): the coordinates are passed to the operating system's geocoding service (on Android, normally provided by Google);</li>
+<li>report a parking spot you have just left and see those reported by others, as described in "Parking spot reports".</li>
 </ul>
 <p>If permission is not granted the app still works: you can search for a town or an address, or pick a point on the map. In this case the searched text is passed to the operating system's geocoding service and the coordinates of the chosen place to the Zero Giri server and to the Ministry's service.</p>
 <h2>Zero Giri server</h2>
-<p>The developer's server (zerogiri.lucadeleo.it) provides the app with the Ministry's fuel open data and with the app configuration.</p>
+<p>The developer's server (zerogiri.lucadeleo.it) provides the app with the Ministry's fuel open data, the app configuration and, when enabled, parking spot reports.</p>
 <ul>
 <li><strong>Anonymous device code</strong>: on first launch the app obtains a random identifier and a secret code from the server, keeps them in the phone's encrypted storage and uses them to access the server. They are not linked to name, email, phone number or other device identifiers. The server keeps the identifier, a fingerprint (hash) of the secret code, the registration date and the date of last access.</li>
 <li><strong>Searches</strong>: for each search the server receives the coordinates of the search point, the radius and the fuel, and replies with the stations in the area. Searches are not stored.</li>
+<li><strong>Parking</strong>: the reports and answers described in "Parking spot reports", with the related counters.</li>
 <li><strong>IP address</strong>: as with any website the server receives the IP address, used only in memory to limit the number of requests and not recorded. The server is reached through Cloudflare, which handles traffic and abuse protection according to its own policy.</li>
 <li>The server logs contain no coordinates, IP addresses or device codes.</li>
 </ul>
@@ -55,7 +58,7 @@
 <li><strong>OpenStreetMap Foundation</strong>: the map tiles of the displayed area; as with any website, the server receives the device's IP address.</li>
 <li><strong>Overpass API</strong> (overpass-api.de, a service that queries OpenStreetMap data), only if "Usa i dati di OpenStreetMap" (Use OpenStreetMap data) is on in the advanced settings: the coordinates of the stations found, to learn the type of road and area and estimate the travel time. The user's location is not sent; the server receives the device's IP address.</li>
 <li><strong>Operating system geocoding service</strong>: coordinates or searched text, to obtain place names and addresses.</li>
-<li><strong>Navigation app</strong> (e.g. Google Maps), only if you use "Portami qui" (Take me there): it receives the location of the chosen station.</li>
+<li><strong>Navigation app</strong> (e.g. Google Maps or Waze), only if you use "Portami qui" or "Portami lì" (Take me there): it receives the location of the chosen station or parking spot.</li>
 <li><strong>App chosen for sharing</strong>, only if you use "Condividi" (Share): it receives the text with the station's data.</li>
 </ul>
 <p>Each service processes data according to its own policy.</p>
@@ -66,12 +69,13 @@
 <li>the favourite stations;</li>
 <li>the anonymous device code, in the phone's encrypted storage;</li>
 <li>a copy of the stations and prices of the areas already searched (Ministry open data and latest real-time prices), to keep working when the services do not respond or there is no connection;</li>
-<li>the type of road and area of the stations received from OpenStreetMap, to avoid requesting it on every search.</li>
+<li>the type of road and area of the stations received from OpenStreetMap, to avoid requesting it on every search;</li>
+<li>whether to show free parking spots on the map.</li>
 </ul>
 <p>This data contains no personal information and the app does not send it to anyone. If Android backup is enabled on the phone, the operating system may include settings and favourites in the user's Google account backup, as for other apps. Downloaded data can be deleted at any time with "Svuota cache" (Clear cache) in the settings; everything is deleted by uninstalling the app.</p>
 <h2>Permissions required</h2>
 <ul>
-<li><strong>Precise and approximate location, only while in use</strong>: to search for nearby stations. You can grant approximate location only: the operating system then provides a location shifted by a couple of kilometres.</li>
+<li><strong>Precise and approximate location, only while in use</strong>: to search for nearby stations and to report parking spots. You can grant approximate location only: the operating system then provides a location shifted by a couple of kilometres, which is enough for stations but not to point out a parking spot.</li>
 <li><strong>Internet access and network state</strong>: to download stations and prices, and to avoid requests when there is no connection.</li>
 </ul>
 <h2>Libraries and SDKs in the app</h2>
@@ -84,8 +88,19 @@
 <li><strong>Glide</strong>: image loading.</li>
 </ul>
 <p>None of these libraries sends data to third parties on its own; the app's communications are only those listed above.</p>
-<h2>Parking spot reports (coming soon)</h2>
-<p>This feature is not available yet. When it is introduced, this section will describe what data is collected, who it is sent to and how long it is kept, and the policy will show the new update date.</p>
+<h2>Parking spot reports</h2>
+<p>With parking spot reports, whoever leaves a parking spot points it out to other users, who see it on the map for a few minutes. It is optional: it is used only by tapping "Ho lasciato il posto" (I've left the spot) or by answering about a spot, and it requires <strong>precise</strong> location, which the app asks for only at that moment, after a screen explaining why it is needed. No report is ever sent automatically, and nothing happens in the background.</p>
+<p><strong>What data.</strong> The server receives and keeps:</p>
+<ul>
+<li>when you tap "Ho lasciato il posto": the coordinates of the spot (the phone's location at that moment), its uncertainty in metres, the date and time, the anonymous device code;</li>
+<li>when you answer "Ci ho parcheggiato" (I parked there) or "Era occupato" (It was taken): the answer, the date and time, the anonymous device code. The location of whoever answers is sent only to check that they are near the spot and <strong>is not stored</strong>;</li>
+<li>for each anonymous code, three counters: spots reported, spots confirmed by others with "Ci ho parcheggiato", spots reported as taken.</li>
+</ul>
+<p>While the map of free spots is open, the app sends the server the centre of the displayed area (or, until the map is ready, the phone's location) to receive the nearby spots; these requests are not stored. The distance to the spot is calculated on the phone.</p>
+<p>No licence plate, car model, name or other personal data is collected, nor any history of movements: the server receives a point only when the user reports or answers.</p>
+<p><strong>Why.</strong> To show other users the nearby free spots; to estimate the probability that a spot is still free, based on how much time has passed and on how many reports from the same anonymous code turned out to be right; to limit abuse and repeated reports; to show whoever reports how many people they have helped, with an estimate of the kilometres and CO2 avoided.</p>
+<p><strong>Who sees it.</strong> Other users see on the map only the location of the spot and how long ago it was reported, not who reported it. Whoever reported a spot sees it marked as their own.</p>
+<p><strong>How long.</strong> A spot stays visible on the map for a few minutes (5 with the current settings), or until someone answers. Reports and answers are deleted after <strong>30 days</strong>; only anonymous counts by area (cells of about 1.2 × 0.6 km) and by hour (day and hour) remain, which do not allow tracing back to the device or to the exact point. The counters remain linked to the anonymous code. Uninstalling the app deletes the code from the phone: the data left on the server can no longer be linked to anyone, and reports are deleted after 30 days anyway. For any request, write to <a href="mailto:luca.deleo@gmail.com">luca.deleo@gmail.com</a>.</p>
 <h2>Children</h2>
 <p>The app is not specifically aimed at children and does not knowingly collect data about them.</p>
 <h2>Changes</h2>
